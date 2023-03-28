@@ -14,16 +14,16 @@ type SuccessModalProps = {
   onClose: () => void;
 };
 
-const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose }) => {
+const SuccessModal = ({ isOpen, onClose }: SuccessModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Registration Successful</ModalHeader>
         <ModalCloseButton />
-        <ModalBody>Congratulations! Your registration has been successful.</ModalBody>
+        <ModalBody>Your registration was successful. Thank you for signing up!</ModalBody>
         <ModalFooter>
-          <Button colorScheme="blue" onClick={onClose}>
+          <Button colorScheme="teal" mr={3} onClick={onClose}>
             Close
           </Button>
         </ModalFooter>
