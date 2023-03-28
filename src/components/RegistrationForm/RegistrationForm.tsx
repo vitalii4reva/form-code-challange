@@ -54,7 +54,7 @@ const RegistrationForm = () => {
     } catch (error) {
       toast({
         title: 'An error occurred',
-        description: error.message, // If it is 😊
+        description: 'Some Error Message', // in real life error.message 😊
         status: 'error',
         duration: 5000,
         isClosable: true,
