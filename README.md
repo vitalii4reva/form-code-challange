@@ -4,6 +4,8 @@
 
 This is a simple registration form built with Chakra UI and React Hook Form. It allows users to enter their email address and password, and it validates the password based on a set of requirements.
 
+You can find production build deployed here: https://form-code-challange.vercel.app/
+
 ## How to run this code:
 
 To run this code, you first need to clone the repository:
