@@ -47,7 +47,7 @@ const RegistrationForm = () => {
     try {
       setIsSubmitting(true);
       // Some kind of API call 😊
-      await new Promise((resolve, reject) => setTimeout(reject, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       console.log(data);
       onOpen();
     } catch (error) {
