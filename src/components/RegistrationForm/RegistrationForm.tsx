@@ -31,17 +31,16 @@ const RegistrationForm = () => {
     mode: 'onChange',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [passwordRequirements, setPasswordRequirements] =
-    useState<PasswordValidationResult>({
-      isValid: false,
-      requirements: {
-        minLength: false,
-        hasLowercase: false,
-        hasUppercase: false,
-        hasNumber: false,
-        hasSpecialChar: false,
-      },
-    });
+  const [passwordRequirements, setPasswordRequirements] = useState<PasswordValidationResult>({
+    isValid: false,
+    requirements: {
+      minLength: false,
+      hasLowercase: false,
+      hasUppercase: false,
+      hasNumber: false,
+      hasSpecialChar: false,
+    },
+  });
   const toast = useToast();
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -90,10 +89,7 @@ const RegistrationForm = () => {
           <GridItem>
             <FormControl id="email" isInvalid={!!formState.errors.email}>
               <FormLabel>Email</FormLabel>
-              <Input
-                type="email"
-                {...register('email', { required: 'Email is required' })}
-              />
+              <Input type="email" {...register('email', { required: 'Email is required' })} />
               <FormErrorMessage>{formState.errors.email?.message}</FormErrorMessage>
             </FormControl>
           </GridItem>
@@ -117,10 +113,7 @@ const RegistrationForm = () => {
                 <Text mb={1} fontWeight="bold">
                   Password requirements:
                 </Text>
-                <Requirement
-                  label="At least 8 characters"
-                  isValid={passwordRequirements.requirements.minLength}
-                />
+                <Requirement label="At least 8 characters" isValid={passwordRequirements.requirements.minLength} />
                 <Requirement
                   label="At least 1 lowercase character"
                   isValid={passwordRequirements.requirements.hasLowercase}
@@ -129,10 +122,7 @@ const RegistrationForm = () => {
                   label="At least 1 uppercase character"
                   isValid={passwordRequirements.requirements.hasUppercase}
                 />
-                <Requirement
-                  label="At least 1 number"
-                  isValid={passwordRequirements.requirements.hasNumber}
-                />
+                <Requirement label="At least 1 number" isValid={passwordRequirements.requirements.hasNumber} />
                 <Requirement
                   label="At least 1 special character"
                   isValid={passwordRequirements.requirements.hasSpecialChar}
@@ -144,13 +134,7 @@ const RegistrationForm = () => {
                 Wonderful password!
               </Text>
             )}
-            <Button
-              mt={4}
-              colorScheme="teal"
-              w="100%"
-              type="submit"
-              isDisabled={!formState.isValid}
-            >
+            <Button mt={4} colorScheme="teal" w="100%" type="submit" isDisabled={!formState.isValid}>
               {isSubmitting ? <Spinner mr={2} /> : null}
               Submit
             </Button>

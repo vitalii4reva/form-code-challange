@@ -17,7 +17,9 @@ type SuccessModalProps = {
 const SuccessModal = ({ isOpen, onClose }: SuccessModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
+      {/* @ts-ignore */}
       <ModalOverlay />
+      {/* @ts-ignore */}
       <ModalContent>
         <ModalHeader>Registration Successful</ModalHeader>
         <ModalCloseButton />
